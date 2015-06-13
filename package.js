@@ -39,7 +39,7 @@ Package.onTest(function (api) {
 
   // 3rd party dependencies.
   api.use([
-    'peerlibrary:classy-test@0.2.9'
+    'peerlibrary:classy-test@0.2.15'
   ]);
 
   api.addFiles([
