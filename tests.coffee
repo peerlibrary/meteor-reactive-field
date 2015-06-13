@@ -10,6 +10,14 @@ class BasicTestCase extends ClassyTestCase
     @assertEqual foo(43), 43
     @assertEqual foo(), 43
 
+    @assertEqual foo.apply(), 43
+    @assertEqual foo.apply(null, [42]), 42
+    @assertEqual foo.apply(), 42
+
+    @assertEqual foo.call(), 42
+    @assertEqual foo.call(null, 43), 43
+    @assertEqual foo.call(), 43
+
     @assertEqual "#{foo}", 'ReactiveField{43}'
 
   testReactive: ->

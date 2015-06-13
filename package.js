@@ -26,7 +26,10 @@ Package.onTest(function (api) {
   // Core dependencies.
   api.use([
     'coffeescript',
-    'tracker'
+    'tracker',
+    'templating',
+    'blaze',
+    'spacebars'
   ]);
 
   // Internal dependencies.
@@ -42,4 +45,9 @@ Package.onTest(function (api) {
   api.addFiles([
     'tests.coffee'
   ]);
+
+  api.addFiles([
+    'tests_client.html',
+    'tests_client.coffee'
+  ], 'client');
 });
