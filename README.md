@@ -44,7 +44,7 @@ meteor add peerlibrary:reactive-field
 Related projects
 ----------------
 
-* [reactive-var](https://atmospherejs.com/meteor/reactive-var) – official Meteor reactive variable implementation
+* [reactive-var](https://atmospherejs.com/meteor/reactive-var) – the official Meteor reactive variable implementation
 which this package just wraps, so the functionality is the same, just syntax how to use it is different
-* [meteor-variable](https://github.com/awwx/meteor-variable) – deprecated package offering similar syntax to this
+* [meteor-variable](https://github.com/awwx/meteor-variable) – an obsolete package offering similar syntax to this
 package
