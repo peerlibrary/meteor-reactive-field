@@ -7,6 +7,7 @@ class BasicTestCase extends ClassyTestCase
     @assertEqual foo(), 42
     @assertInstanceOf foo, ReactiveField
     @assertEqual foo.constructor, ReactiveField
+    @assertTrue _.isFunction foo
     @assertEqual foo(43), 43
     @assertEqual foo(), 43
 
