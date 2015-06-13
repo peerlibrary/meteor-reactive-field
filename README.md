@@ -5,7 +5,7 @@ Reactive field for [Meteor](https://meteor.com/) provides an alternative syntax 
 [`ReactiveVar`](http://docs.meteor.com/#/full/reactivevar_pkg):
 
 ```javascript
-foobar = new ReactiveField('initialValue');
+var foobar = new ReactiveField('initialValue');
 console.log(foobar()); // prints 'initialValue' string
 foobar('newValue');
 console.log(foobar()); // prints 'newValue' string
