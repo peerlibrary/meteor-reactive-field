@@ -5,13 +5,13 @@ Reactive field for [Meteor](https://meteor.com/) provides an alternative syntax 
 [`ReactiveVar`](http://docs.meteor.com/#/full/reactivevar_pkg):
 
 ```javascript
-var foobar = new ReactiveField('initialValue');
-console.log(foobar()); // prints 'initialValue' string
-foobar('newValue');
-console.log(foobar()); // prints 'newValue' string
+var field = new ReactiveField('initialValue');
+console.log(field()); // prints 'initialValue' string
+field('newValue');
+console.log(field()); // prints 'newValue' string
 ```
 
-So instead of `foobar.get()` and `foobar.set()`, you can simply call it as a function which (reactively) returns a
+So instead of `field.get()` and `field.set()`, you can simply call it as a function which (reactively) returns a
 value, or call it with an argument to set the new value. Setter still returns the value.
 
 Optionally, you can pass custom equality function:
@@ -35,7 +35,7 @@ meteor add peerlibrary:reactive-field
 Motivation
 ----------
 
-The main motivation for this package is that you can assign reactive values to template instances and
+The main motivation for this package is that you can assign reactive values to
 [Blaze Components](https://github.com/peerlibrary/meteor-blaze-components) and then you can access them in the template
 by simply doing `{{field}}` instead of `{{field.get}}`. And same for any other objects for which you create reactive
 fields in the constructor and then you or have `this.field.get()` calls all around the code, which is ugly because if
