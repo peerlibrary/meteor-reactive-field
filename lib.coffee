@@ -1,8 +1,17 @@
 class ReactiveField
-  constructor: (initialValue, equalsFunc) ->
+  constructor: (initialValue, equalsFunc, storePrevious) ->
+    # To allow not passing equalsFunc, but just storePrevious.
+    if not _.isFunction(equalsFunc) and arguments.length is 2
+      storePrevious = equalsFunc
+      equalsFunc = null
+    previousValue = undefined
     value = new ReactiveVar initialValue, equalsFunc
+
     getterSetter = (newValue) ->
       if arguments.length > 0
+        if storePrevious
+          previousValue = Tracker.nonreactive =>
+            value.get()
         value.set newValue
         # We return the value as well, but we do not want to register a dependency.
         return Tracker.nonreactive =>
@@ -30,5 +39,9 @@ class ReactiveField
         getterSetter arg
       else
         getterSetter()
+
+    getterSetter.previous = ->
+      throw new Error "Storing previous value is not enabled." unless storePrevious
+      previousValue
 
     return getterSetter

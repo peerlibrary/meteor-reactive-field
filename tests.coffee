@@ -2,7 +2,9 @@ class BasicTestCase extends ClassyTestCase
   @testName: 'reactive-field - basic'
 
   testBasic: ->
-    foo = new ReactiveField 42
+    foo = new ReactiveField 42, true
+
+    @assertEqual foo.previous(), undefined
 
     @assertEqual foo(), 42
     @assertInstanceOf foo, ReactiveField
@@ -10,14 +12,17 @@ class BasicTestCase extends ClassyTestCase
     @assertTrue _.isFunction foo
     @assertEqual foo(43), 43
     @assertEqual foo(), 43
+    @assertEqual foo.previous(), 42
 
     @assertEqual foo.apply(), 43
     @assertEqual foo.apply(null, [42]), 42
     @assertEqual foo.apply(), 42
+    @assertEqual foo.previous(), 43
 
     @assertEqual foo.call(), 42
     @assertEqual foo.call(null, 43), 43
     @assertEqual foo.call(), 43
+    @assertEqual foo.previous(), 42
 
     @assertEqual "#{foo}", 'ReactiveField{43}'
 

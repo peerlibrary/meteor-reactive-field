@@ -20,6 +20,19 @@ Optionally, you can pass custom equality function:
 new ReactiveField('initialValue', function (a, b) {return a === b});
 ```
 
+You can also enable storing the previous value stored in the reactive field using:
+
+```javascript
+// You can also pass it as a third argument when using custom equality function
+var field = new ReactiveField('initialValue', true);
+console.log(field()); // prints 'initialValue' string
+field('newValue');
+console.log(field()); // prints 'newValue' string
+console.log(field.previous()); // prints 'initialValue' string
+```
+
+This is useful when you want to compare inside a computation how the value changed.
+
 Adding this package to your [Meteor](http://www.meteor.com/) application adds the `ReactiveField` constructor into
 the global scope.
 

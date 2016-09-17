@@ -12,7 +12,8 @@ Package.onUse(function (api) {
   api.use([
     'coffeescript',
     'tracker',
-    'reactive-var'
+    'reactive-var',
+    'underscore'
   ]);
 
   api.export('ReactiveField');
@@ -23,13 +24,16 @@ Package.onUse(function (api) {
 });
 
 Package.onTest(function (api) {
+  api.versionsFrom('METEOR@1.0.3.1');
+
   // Core dependencies.
   api.use([
     'coffeescript',
     'tracker',
     'templating',
     'blaze',
-    'spacebars'
+    'spacebars',
+    'underscore'
   ]);
 
   // Internal dependencies.
