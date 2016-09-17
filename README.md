@@ -32,6 +32,7 @@ console.log(field.previous()); // prints 'initialValue' string
 ```
 
 This is useful when you want to compare inside a computation how the value changed.
+`field.previous()` is not reactive.
 
 Adding this package to your [Meteor](http://www.meteor.com/) application adds the `ReactiveField` constructor into
 the global scope.
