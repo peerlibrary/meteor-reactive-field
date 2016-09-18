@@ -10,8 +10,12 @@ class ReactiveField
     getterSetter = (newValue) ->
       if arguments.length > 0
         if storePrevious
-          previousValue = Tracker.nonreactive =>
-            value.get()
+          Tracker.nonreactive =>
+            oldValue = value.get()
+            # Only if the new value is different than currently stored value, we update the previous value.
+            unless (equalsFunc or ReactiveVar._isEqual)(oldValue, newValue)
+              previousValue = oldValue
+
         value.set newValue
         # We return the value as well, but we do not want to register a dependency.
         return Tracker.nonreactive =>
