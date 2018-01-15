@@ -1,4 +1,4 @@
-class ReactiveField
+export class ReactiveField
   constructor: (initialValue, equalsFunc, storePrevious) ->
     # To allow not passing equalsFunc, but just storePrevious.
     if not _.isFunction(equalsFunc) and arguments.length is 2
