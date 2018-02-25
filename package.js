@@ -1,7 +1,7 @@
 Package.describe({
   name: 'peerlibrary:reactive-field',
   summary: "Reactive field for Meteor",
-  version: '0.4.0',
+  version: '0.5.0',
   git: 'https://github.com/peerlibrary/meteor-reactive-field.git'
 });
 
