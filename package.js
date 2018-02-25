@@ -10,7 +10,6 @@ Package.onUse(function (api) {
 
   // Core dependencies.
   api.use([
-    'coffeescript@2.0.3_3',
     'ecmascript',
     'tracker',
     'reactive-var',
@@ -19,7 +18,7 @@ Package.onUse(function (api) {
 
   api.export('ReactiveField');
 
-  api.mainModule('lib.coffee');
+  api.mainModule('lib.js');
 });
 
 Package.onTest(function (api) {
